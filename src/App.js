@@ -23,9 +23,9 @@ changeCity =(event)=> {
       <div className="App">
         {image}
   {/* create a button for each of the camera locations */}
-  {this.state.cities.map(city => <button id={city.source} onClick={this.changeCity} >{city.name} </button>)}
+  {this.state.cities.map(city => <button className='btn' id={city.source} onClick={this.changeCity} >{city.name} </button>)}
 <div className='circle-wrapper'>
-  <div id="circle" onMouseMove={this.onhover} onMouseOut={this.clearCoor}/>
+  <div  id="circle" onMouseMove={this.onhover} onMouseOut={this.clearCoor}/>
 </div>
       </div>
     );
