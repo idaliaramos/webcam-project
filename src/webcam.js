@@ -56,6 +56,7 @@ var cameraView = document.getElementById("cameraView");
                 },
 
                 useCamera: function(url) {
+                   let cameraView = document.getElementById("cameraView")
                     cameraView.src = url;
                 },
 
