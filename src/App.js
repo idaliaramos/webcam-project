@@ -4,7 +4,8 @@ import webcam from './webcam.js'
 
 class App extends Component {
   state={
-  webcam: webcam()
+  webcam: webcam(),
+  cities: []
 }
 componentDidMount(){
   return fetch('http://runningios.com/screamingbox/cameras.json')
@@ -14,6 +15,7 @@ componentDidMount(){
   render() {
     return (
       <div className="App">
+  {this.state.cities.map(city => <button id={city.source} onClick={this.changeCity} >{city.name} </button>)}
 
       </div>
     );

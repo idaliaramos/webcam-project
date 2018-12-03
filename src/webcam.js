@@ -4,15 +4,12 @@
  *
  *
  * */
-
-
-if(!window.WebCam) {
     /**
      *
      * WebCam
      * @constructor
      */
-    window.WebCam = (function() {
+function webcam() {
         var webCamContainer = document.createElement("div");
         webCamContainer.style = "width: 600px; height: 400px; position: relative; overflow: hidden;";
         var cameraView = document.createElement("img");
@@ -120,5 +117,5 @@ if(!window.WebCam) {
                 return webCamContainer;
             }
         };
-    })();
-}
+    };
+    export default webcam
