@@ -1,25 +1,20 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import webcam from './webcam.js'
 
 class App extends Component {
+  state={
+  webcam: webcam()
+}
+componentDidMount(){
+  return fetch('http://runningios.com/screamingbox/cameras.json')
+  .then(response=> response.json()).then(data=> this.setState({cities:data})
+)
+}
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+
       </div>
     );
   }
