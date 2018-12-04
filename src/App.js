@@ -40,7 +40,7 @@ onhover =(e) => {
   {/* create a button for each of the camera locations */}
   {this.state.cities.map(city => <button className='btn' id={city.source} onClick={this.changeCity} >{city.name} </button>)}
 <div className='circle-wrapper'>
-  <div  id="circle" onMouseMove={this.onhover}/>
+  <div  id="circle" onClick={this.onhover}/>
 </div>
       </div>
     );

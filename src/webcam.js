@@ -11,17 +11,25 @@
      */
 import React from 'react'
 function webcam() {
-        // var webCamContainer = document.createElement("div");
-        // webCamContainer.style = "width: 600px; height: 400px; position: relative; overflow: hidden;";
-        // var cameraView = document.createElement("img");
-        // cameraView.style = "position: absolute; left: 0px; top: 0px; width: auto;";
-        // cameraView.src = "http://runningios.com/screamingbox/new-york.jpg";
-        // cameraView.id = "cameraView";
-        // webCamContainer.appendChild(cameraView);
-      let webCamContainer = React.createElement("div",null,
-  React.createElement("img", { id: "cameraView",  src: "http://runningios.com/screamingbox/new-york.jpg" })
+        let container = {
+          width: 600,
+          height: 400,
+          position: "relative",
+          overflow: "hidden"
+        };
+        let cameraViewStyle ={
+          position: 'absolute',
+          left: 0,
+          top: 0,
+          width: 'auto'
+        }
+        let webCamContainer = React.createElement(
+  "div", {
+    style: container
+  },
+
+  React.createElement("img", {style: cameraViewStyle, id: "cameraView",  src: "http://runningios.com/screamingbox/new-york.jpg" })
 );
-var cameraView = document.getElementById("cameraView");
 
         /**
          *
