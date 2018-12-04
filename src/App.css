@@ -1,6 +1,5 @@
 .App {
   text-align: center;
-
 }
 
 .App-logo {
@@ -26,15 +25,16 @@
   display: flex;
   flex-wrap:wrap;
 }*/
-.button-wrapper{
+.button-wrapper {
   display: flex;
-  flex-direction: column
+  flex-direction: column;
+  align-items: center;
 }
-.circle-wrapper{
+.circle-wrapper {
   display: flex;
-  justify-content: center
+  justify-content: center;
 }
-.image-wrapper{
+.image-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -42,31 +42,31 @@
 .btn {
   padding: 16px 32px;
   text-align: center;
-  display: inline-block;
   font-size: 16px;
-  margin: 4px 2px;
+  margin: 5px 3px;
   cursor: pointer;
-  text-decoration: none;
   text-transform: uppercase;
+  width: 300px;
+  margin-left: 20px;
+  max-width: 400px;
+  border-radius: 5px;
 }
 .btn:hover {
-     background-color: #008CBA;
-     color: white;
-
+  background-color: #008cba;
+  color: white;
 }
 #circle {
-     margin-top: 20px;
-     width: 300px;
-     height: 300px;
-     -webkit-border-radius: 50%px;
-     -moz-border-radius: 50%;
-     border-radius: 50%;
-     background: red;
-     justify-content: center;
-     align-items: center;
-     background-color: black;
-
-   }
+  margin-top: 20px;
+  width: 350px;
+  height: 350px;
+  -webkit-border-radius: 50%px;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  background: red;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+}
 
 @keyframes App-logo-spin {
   from {

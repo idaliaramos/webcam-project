@@ -58,7 +58,8 @@ class App extends Component {
       <div className="App">
         <div className="container">
           <div className="image-wrapper">{image}</div>
-          {/* create a button for each of the camera locations */}
+
+          {/*  tabbing navigation */}
           <div className="tabs">
             <button className="btn" onClick={this.showCities}>
               Cameras
@@ -67,6 +68,7 @@ class App extends Component {
               Control
             </button>
           </div>
+          {/* create a button for each of the camera locations */}
           <div className="button-wrapper">
             {this.state.showCities
               ? this.state.cities.map(city => (
@@ -79,6 +81,7 @@ class App extends Component {
                   </button>
                 ))
               : null}
+            {/* show circle on click of the control button */}
             {this.state.showControl ? (
               <div className="circle-wrapper">
                 <div
