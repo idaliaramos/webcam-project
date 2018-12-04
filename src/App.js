@@ -5,12 +5,23 @@ import webcam from './webcam.js'
 class App extends Component {
   state={
   webcam: webcam(),
-  cities: []
+  cities: [],
+  showCities:false,
+  showControl:false
 }
 componentDidMount(){
   return fetch('http://runningios.com/screamingbox/cameras.json')
   .then(response=> response.json()).then(data=> this.setState({cities:data})
 )
+}
+showCities=()=>{
+  !this.state.showCities ? this.setState({showControl: false}): this.setState({showControl: this.state.showControl})
+  this.setState({showCities:!this.state.showCities})
+  // this.setState({showControl:!this.state.showControl})
+}
+showControl=()=>{
+  !this.state.showControl ? this.setState({showCities: false}): this.setState({showCities: this.state.showCities})
+  this.setState({showControl:!this.state.showControl})
 }
 //on click of the button will change the location
 changeCity =(event)=> {
@@ -40,13 +51,24 @@ handleRelease=(e)=>{
   render() {
     let image = this.state.webcam.getCameraNode()
     return (
-      <div className="App">
-        {image}
+<div className="App">
+  <div className='container'>
+  <div className='image-wrapper'>
+    {image}
+  </div>
   {/* create a button for each of the camera locations */}
-  {this.state.cities.map(city => <button className='btn' id={city.source} onClick={this.changeCity} >{city.name} </button>)}
-<div className='circle-wrapper'>
-  <div id="circle" onMouseDown={this.handleMouseDown} onMouseUp={this.handleRelease}/>
-</div>
+  <div className='tabs'>
+  <button className='btn' onClick={this.showCities} >Cameras</button>
+  <button className='btn' onClick={this.showControl}>Control</button>
+  </div>
+  <div className='button-wrapper'>
+  {this.state.showCities ? this.state.cities.map(city => <button className='btn' id={city.source} onClick={this.changeCity} >{city.name} </button>): null}
+  {this.state.showControl ?
+    <div className='circle-wrapper'>
+      <div id="circle" onMouseDown={this.handleMouseDown} onMouseUp={this.handleRelease}/>
+    </div> : null}
+    </div>
+      </div>
       </div>
     );
   }

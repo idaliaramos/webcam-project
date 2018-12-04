@@ -22,9 +22,22 @@
 .App-link {
   color: #61dafb;
 }
+/*.container{
+  display: flex;
+  flex-wrap:wrap;
+}*/
+.button-wrapper{
+  display: flex;
+  flex-direction: column
+}
 .circle-wrapper{
   display: flex;
   justify-content: center
+}
+.image-wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .btn {
   padding: 16px 32px;
@@ -43,8 +56,8 @@
 }
 #circle {
      margin-top: 20px;
-     width: 200px;
-     height: 200px;
+     width: 300px;
+     height: 300px;
      -webkit-border-radius: 50%px;
      -moz-border-radius: 50%;
      border-radius: 50%;

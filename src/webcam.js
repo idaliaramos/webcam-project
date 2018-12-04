@@ -9,13 +9,14 @@
      * WebCam
      * @constructor
      */
+
 import React from 'react'
 function webcam() {
         let container = {
           width: 600,
           height: 400,
           position: "relative",
-          overflow: "hidden"
+          overflow: "hidden",
         };
         let cameraViewStyle ={
           position: 'absolute',
