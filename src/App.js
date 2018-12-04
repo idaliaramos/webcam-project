@@ -29,7 +29,7 @@ handleMoving=(e)=>{
   let newOriginX= rect.x + rect.width/2
   let newOriginY= rect.y + rect.height/2
   let xdistance = mouseX - newOriginX
-  let ydistance = (mouseY - newOriginY )
+  let ydistance = (mouseY - newOriginY )*-1
   //call webcam move with coordinates
   this.state.webcam.move(xdistance, ydistance)
 }
