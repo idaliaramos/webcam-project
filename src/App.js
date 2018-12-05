@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import "./App.css";
-import webcam from "./webcam.js";
+import webcam from "./webcam";
 import CitiesComponent from "./components/CitiesComponent";
 import CircleComponent from "./components/CircleComponent";
+import ImageComponent from "./components/ImageComponent";
+
 class App extends Component {
   state = {
     webcam: webcam(),
-    // cities: [],
     showCities: false,
     showControl: false
   };
@@ -20,7 +21,6 @@ class App extends Component {
       ? this.setState({ showControl: false })
       : this.setState({ showControl: this.state.showControl });
     this.setState({ showCities: !this.state.showCities });
-    // this.setState({showControl:!this.state.showControl})
   };
   showControl = () => {
     !this.state.showControl
@@ -28,19 +28,15 @@ class App extends Component {
       : this.setState({ showCities: this.state.showCities });
     this.setState({ showControl: !this.state.showControl });
   };
-  //on click of the button will change the location
-  changeCity = event => {
-    this.state.webcam.setSource(event.target.id);
-  };
-
   render() {
-    let image = this.state.webcam.getCameraNode();
     return (
       <div className="App">
         <div className="container">
-          <div className="image-wrapper">{image}</div>
+          <div className="image-wrapper">
+            <ImageComponent webcam={this.state.webcam} />
+          </div>
           {/*  tabbing navigation */}
-          <div className="tabs">
+          <div>
             <button className="btn" onClick={this.showCities}>
               Cameras
             </button>
@@ -52,6 +48,7 @@ class App extends Component {
           <div className="button-wrapper">
             {this.state.showCities ? (
               <CitiesComponent
+                webcam={this.state.webcam}
                 cities={this.state.cities}
                 changeCity={this.changeCity}
               />
@@ -59,7 +56,7 @@ class App extends Component {
             {/* show circle on click of the control button */}
             {this.state.showControl ? (
               <div className="circle-wrapper">
-                <CircleComponent />
+                <CircleComponent webcam={this.state.webcam} />
               </div>
             ) : null}
           </div>

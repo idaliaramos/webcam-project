@@ -1,7 +1,8 @@
 import React from "react";
 import webCam from "../webcam.js";
 const CircleComponent = props => {
-  let webcam = webCam();
+  // let webcam = webCam();
+
   //gets called on mouseDown, then proceeds to move around image
   const handleMouseDown = e => {
     e.target.addEventListener("mousemove", handleMoving);
@@ -17,7 +18,7 @@ const CircleComponent = props => {
     let xdistance = mouseX - newOriginX;
     let ydistance = (mouseY - newOriginY) * -1;
     //call webcam move with coordinates
-    webcam.move(xdistance, ydistance);
+    props.webcam.move(xdistance, ydistance);
   };
   //removes mousemove functionality to reset
   const handleRelease = e => {
