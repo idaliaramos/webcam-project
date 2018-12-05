@@ -1,8 +1,5 @@
 import React from "react";
-import webCam from "../webcam.js";
 const CircleComponent = props => {
-  // let webcam = webCam();
-
   //gets called on mouseDown, then proceeds to move around image
   const handleMouseDown = e => {
     e.target.addEventListener("mousemove", handleMoving);
