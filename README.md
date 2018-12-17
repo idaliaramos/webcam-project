@@ -1,7 +1,6 @@
 # Webcam Project
 
 In this project I worked on manipulating an image to get effects to navigate around the view, similar to google earth: [http://webcam.surge.sh/](http://webcam.surge.sh/)
-[!demo]("
 ## Front-end built with:
 
 * React.js
